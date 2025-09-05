@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addItemForm: document.getElementById('add-item-form'),
         customRosterDisplay: document.getElementById('custom-roster-display')
     };
-
+    
     let currentSelection = {};
     let flatProtagonists = [], flatAntagonists = [], legends = [];
     let customData = { protagonists: [], antagonists: [], settings: [], motives: [], twists: [] };
