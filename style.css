@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
-
 :root {
     --primary-bg: #10101a;
     --secondary-bg: #1a1a2e;
@@ -8,7 +7,6 @@
     --title-font: 'Cinzel', serif;
     --body-font: 'Roboto', sans-serif;
 }
-
 body {
     background-color: var(--primary-bg);
     color: var(--text-color);
@@ -20,7 +18,6 @@ body {
     margin: 0;
     padding: 20px;
 }
-
 .container {
     background-color: var(--secondary-bg);
     border: 1px solid var(--accent-color);
@@ -32,7 +29,6 @@ body {
     text-align: center;
     margin-bottom: 40px;
 }
-
 h1, h2, h3 {
     font-family: var(--title-font);
     color: var(--accent-color);
@@ -41,50 +37,42 @@ h1, h2, h3 {
     margin-top: 0;
     text-transform: uppercase;
 }
-
 h2 {
     font-size: 1.2rem;
     margin-top: 40px;
     border-top: 1px solid rgba(0, 255, 255, 0.2);
     padding-top: 30px;
 }
-
 h3 {
     font-size: 1rem;
     text-align: left;
     color: white;
 }
-
 p {
     font-weight: 300;
     margin-bottom: 30px;
 }
-
 .dropdown-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
     margin-bottom: 30px;
 }
-
 .dropdown-group {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
-
 .dropdown-group label {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .reroll-btn {
     cursor: pointer;
     font-size: 1.2rem;
     display: none;
 }
-
 label {
     font-family: var(--title-font);
     margin-bottom: 8px;
@@ -107,22 +95,20 @@ select, textarea, input[type="text"] {
 
 select { cursor: pointer; }
 textarea { cursor: text; }
-
 textarea:focus, input[type="text"]:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
-
 textarea[readonly] {
     cursor: pointer;
 }
+
 
 optgroup {
     font-style: italic;
     font-weight: bold;
     color: var(--accent-color);
 }
-
 button {
     background: none;
     border: 2px solid var(--accent-color);
@@ -138,19 +124,16 @@ button {
     transition: all 0.3s ease;
     margin-top: 20px;
 }
-
 button:hover, .reroll-btn:hover {
     color: white;
     text-shadow: 0 0 5px white;
 }
-
 button.action-btn {
     font-size: 0.9rem;
     padding: 10px 20px;
     margin: 15px 10px 0 0;
     min-width: 150px;
 }
-
 .output {
     margin-top: 40px;
     min-height: 100px;
@@ -162,27 +145,23 @@ button.action-btn {
     align-items: center;
     text-align: left;
 }
-
 #result {
     font-size: 1.4rem;
     line-height: 1.5;
     font-weight: 300;
     color: white;
 }
-
 .module {
     margin-top: 30px;
     text-align: left;
     display: none;
 }
-
 .story-act, .thumbnail-idea, .poll-question {
     background-color: var(--primary-bg);
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
-
 #story-template-display {
     font-family: var(--title-font);
     font-style: italic;
@@ -190,7 +169,6 @@ button.action-btn {
     text-align: center;
     margin-bottom: 20px;
 }
-
 /* Hall of Legends */
 .hall-of-legends {
     margin-top: 40px;
@@ -227,7 +205,6 @@ button.action-btn {
     cursor: pointer;
     margin-top: 0;
 }
-
 /* Roster Manager Modal */
 .modal {
     display: none;
