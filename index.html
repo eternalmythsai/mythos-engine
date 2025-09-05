@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mythos Engine v16 - The Synergy Engine</title>
+    <title>Mythos Engine v17 - The Writer's Room</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Mythos Engine v16</h1>
-        <p>Forge your next legend. The Synergy Engine intelligently analyzes your matchup to create tailored content.</p>
+        <h1>Mythos Engine v17</h1>
+        <p>Forge your legend, then refine it. All generated content below the prompt is now editable.</p>
 
         <div class="dropdown-grid">
             <div class="dropdown-group">
@@ -49,7 +49,7 @@
 
         <button id="generateBtn">Forge Legend</button>
         <div id="generation-controls" class="module">
-            <button id="saveBtn" class="action-btn">Save Legend</button>
+            <button id="saveBtn" class="action-btn">Save to Hall of Legends</button>
             <button id="exportBtn" class="action-btn">Export All Content</button>
         </div>
 
@@ -79,15 +79,15 @@
                 <div id="story-template-display"></div>
                 <div class="story-act">
                     <h3>ACT I: The Inciting Incident</h3>
-                    <p id="act1"></p>
+                    <textarea id="act1"></textarea>
                 </div>
                 <div class="story-act">
                     <h3>ACT II: The Escalation</h3>
-                    <p id="act2"></p>
+                    <textarea id="act2"></textarea>
                 </div>
                 <div class="story-act">
                     <h3>ACT III: The Resolution</h3>
-                    <p id="act3"></p>
+                    <textarea id="act3"></textarea>
                 </div>
                 <button id="elaborateBtn" class="action-btn">Elaborate with AI</button>
             </div>
@@ -105,13 +105,12 @@
             <div class="module" id="socialAmplifier">
                 <h2>Social Media Amplifier</h2>
                 <h3>Suggested YouTube Titles</h3>
-                <ul id="titleList"></ul>
+                <textarea id="titleList"></textarea>
                 <h3>YouTube Description</h3>
                 <textarea id="youtubeDesc"></textarea>
-                <button id="copyDescBtn" class="action-btn">Copy Description</button>
                 <h3>Hashtags</h3>
                 <textarea id="hashtags"></textarea>
-                <button id="copyTagsBtn" class="action-btn">Copy Hashtags</button>
+                <button id="copySocialsBtn" class="action-btn">Copy All Social Text</button>
             </div>
         </div>
         <div class="hall-of-legends">
