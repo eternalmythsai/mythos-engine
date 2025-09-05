@@ -1,234 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
-
-:root {
-    --primary-bg: #10101a;
-    --secondary-bg: #1a1a2e;
-    --accent-color: #00ffff;
-    --text-color: #e0e0e0;
-    --title-font: 'Cinzel', serif;
-    --body-font: 'Roboto', sans-serif;
-}
-
-body {
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    font-family: var(--body-font);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align to top for scrolling */
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--accent-color);
-    border-radius: 15px;
-    padding: 40px;
-    max-width: 900px;
-    width: 100%;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-h1, h2, h3 {
-    font-family: var(--title-font);
-    color: var(--accent-color);
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-top: 0;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 1.2rem;
-    margin-top: 40px;
-    border-top: 1px solid rgba(0, 255, 255, 0.2);
-    padding-top: 30px;
-}
-
-h3 {
-    font-size: 1rem;
-    text-align: left;
-    color: white;
-}
-
-p {
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-
-.dropdown-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    margin-bottom: 30px;
-}
-
-.dropdown-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.dropdown-group label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.reroll-btn {
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: none; /* Hidden by default */
-}
-
-label {
-    font-family: var(--title-font);
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-select, textarea {
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    padding: 12px;
-    font-family: var(--body-font);
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-textarea {
-    width: 100%;
-    min-height: 120px;
-    resize: vertical;
-    box-sizing: border-box;
-    cursor: text;
-}
-
-textarea:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-}
-
-textarea[readonly] {
-    cursor: pointer;
-}
-
-
-optgroup {
-    font-style: italic;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-
-button {
-    background: none;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 15px 30px;
-    font-family: var(--title-font);
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-button:hover, .reroll-btn:hover {
-    color: white;
-    text-shadow: 0 0 5px white;
-}
-
-button.action-btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-    margin: 15px 10px 0 0;
-    min-width: 150px;
-}
-
-.output {
-    margin-top: 40px;
-    min-height: 100px;
-    background-color: var(--primary-bg);
-    border-radius: 10px;
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
-
-#result {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    font-weight: 300;
-    color: white;
-}
-
-.module {
-    margin-top: 30px;
-    text-align: left;
-    display: none; /* Hidden by default */
-}
-
-.story-act, .thumbnail-idea, .poll-question {
-    background-color: var(--primary-bg);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-#story-template-display {
-    font-family: var(--title-font);
-    font-style: italic;
-    color: var(--accent-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Hall of Legends */
-.hall-of-legends {
-    margin-top: 40px;
-}
-.saved-legend {
-    background-color: var(--primary-bg);
-    border-left: 3px solid var(--accent-color);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    text-align: left;
-    position: relative;
-}
-.saved-legend p {
-    font-size: 0.9rem;
-    margin: 0 0 10px 0;
-    white-space: pre-wrap;
-}
-.legend-actions button {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-    margin: 5px 5px 0 0;
-    text-transform: none;
-    letter-spacing: 1px;
-}
-.delete-legend-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: #ff4d4d;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 0;
+{
+  "protagonists": [
+    { "groupName": "Marvel Comics", "characters": [
+        { "name": "Iron Man", "tags": ["human", "tech", "gadgets", "genius"] },
+        { "name": "Captain America", "tags": ["human", "skill", "super_strength", "leader", "morality"] },
+        { "name": "Thor", "tags": ["god", "divinity", "super_strength", "flight", "elemental"] },
+        { "name": "Hulk", "tags": ["human", "transformation", "brute_force", "super_strength", "invulnerable", "rage", "radiation"] },
+        { "name": "Spider-Man", "tags": ["human", "agility", "super_strength", "genius", "web_slinging"] },
+        { "name": "Wolverine", "tags": ["mutant", "healing", "skill", "brutal"] },
+        { "name": "Doctor Strange", "tags": ["human", "magic", "sorcerer", "reality_warper"] },
+        { "name": "Scarlet Witch", "tags": ["mutant", "magic", "reality_warper", "psychic"] },
+        { "name": "Captain Marvel", "tags": ["human", "cosmic", "flight", "energy_projection"] },
+        { "name": "Black Panther", "tags": ["human", "tech", "skill", "leader", "gadgets"] },
+        { "name": "Silver Surfer", "tags": ["alien", "cosmic", "flight", "energy_projection"] },
+        { "name": "The Sentry", "tags": ["human", "cosmic", "flight", "super_strength", "invulnerable", "psychological"] },
+        { "name": "Jean Grey (Phoenix Force)", "tags": ["mutant", "cosmic", "telepathy", "reality_warper", "psychic"] },
+        { "name": "Ghost Rider", "tags": ["human", "demon", "magic", "supernatural", "invulnerable"] },
+        { "name": "Blade", "tags": ["vampire", "skill", "super_strength"] },
+        { "name": "The Punisher", "tags": ["human", "skill", "weapons", "brutal"] },
+        { "name": "Daredevil", "tags": ["human", "skill", "senses"] },
+        { "name": "Moon Knight", "tags": ["human", "divinity", "psychological", "brutal"] },
+        { "name": "Professor X", "tags": ["mutant", "telepathy", "leader", "psychic"] },
+        { "name": "Adam Warlock", "tags": ["artificial", "cosmic", "magic", "energy_projection"] }
+    ]},
+    { "groupName": "DC Comics", "characters": [
+        { "name": "Superman", "tags": ["alien", "flight", "super_strength", "invulnerable", "morality"] },
+        { "name": "Batman", "tags": ["human", "detective", "stealth", "gadgets", "skill", "psychological"] },
+        { "name": "Wonder Woman", "tags": ["god", "divinity", "super_strength", "skill", "magic"] },
+        { "name": "The Flash (Barry Allen)", "tags": ["human", "speed", "time_travel"] },
+        { "name": "Green Lantern (Hal Jordan)", "tags": ["human", "tech", "energy_projection", "cosmic"] },
+        { "name": "Aquaman", "tags": ["atlantean", "super_strength", "leader", "aquatic"] },
+        { "name": "Martian Manhunter", "tags": ["alien", "telepathy", "shapeshifter", "flight", "psychic"] },
+        { "name": "Doctor Fate", "tags": ["human", "magic", "sorcerer", "divinity"] },
+        { "name": "The Spectre", "tags": ["divinity", "magic", "reality_warper", "cosmic"] },
+        { "name": "Shazam", "tags": ["human", "magic", "divinity", "super_strength", "flight"] },
+        { "name": "Supergirl", "tags": ["alien", "flight", "super_strength"] },
+        { "name": "Green Arrow", "tags": ["human", "skill", "gadgets", "weapons"] },
+        { "name": "Zatanna", "tags": ["human", "magic", "sorcerer"] },
+        { "name": "John Constantine", "tags": ["human", "magic", "deception", "sorcerer"] }
+    ]},
+     { "groupName": "Anime", "characters": [
+        { "name": "Goku (Dragon Ball)", "tags": ["alien", "super_strength", "flight", "energy_projection", "transformation", "skill"] },
+        { "name": "Vegeta (Dragon Ball)", "tags": ["alien", "super_strength", "flight", "energy_projection", "transformation", "skill"] },
+        { "name": "Saitama (One Punch Man)", "tags": ["human", "super_strength", "invulnerable", "parody", "brute_force"] },
+        { "name": "Naruto Uzumaki (Naruto)", "tags": ["human", "ninja", "skill", "transformation", "elemental"] },
+        { "name": "Alucard (Hellsing)", "tags": ["vampire", "undead", "supernatural", "shapeshifter", "regeneration", "brutal"] },
+        { "name": "Guts (Berserk)", "tags": ["human", "skill", "super_strength", "brutal", "cursed"] }
+    ]},
+    { "groupName": "Movie & TV Heroes", "characters": [
+        { "name": "John Wick", "tags": ["human", "skill", "weapons", "brutal"] },
+        { "name": "Ellen Ripley (Alien)", "tags": ["human", "survivor", "tech"] },
+        { "name": "Sarah Connor (Terminator)", "tags": ["human", "survivor", "weapons", "leader"] },
+        { "name": "Luke Skywalker (Star Wars)", "tags": ["human", "psychic", "skill", "magic", "leader"] },
+        { "name": "Neo (The Matrix)", "tags": ["human", "reality_warper", "flight", "skill"] },
+        { "name": "The Doctor (Doctor Who)", "tags": ["alien", "genius", "time_travel", "tech"] },
+        { "name": "Walter White (Breaking Bad)", "tags": ["human", "genius", "deception", "psychological"] }
+    ]},
+    { "groupName": "Myth, Legend & Games", "characters": [
+        { "name": "Kratos (God of War)", "tags": ["god", "divinity", "super_strength", "brutal", "rage", "weapons"] },
+        { "name": "Zeus (Greek Mythology)", "tags": ["god", "divinity", "leader", "elemental"] },
+        { "name": "Doom Slayer (DOOM)", "tags": ["human", "super_strength", "brutal", "demon", "weapons"] },
+        { "name": "Master Chief (Halo)", "tags": ["human", "tech", "skill", "leader", "weapons"] }
+    ]}
+  ],
+  "antagonists": [
+    { "groupName": "Marvel Comics", "characters": [
+        { "name": "Thanos", "tags": ["alien", "cosmic", "super_strength", "genius", "reality_warper"] },
+        { "name": "Doctor Doom", "tags": ["human", "magic", "tech", "genius", "sorcerer", "leader"] },
+        { "name": "Galactus", "tags": ["cosmic", "divinity", "invulnerable", "god", "reality_warper"] },
+        { "name": "Loki", "tags": ["god", "magic", "deception", "shapeshifter", "sorcerer"] },
+        { "name": "Venom", "tags": ["alien", "symbiote", "shapeshifter", "brutal"] },
+        { "name": "Ultron", "tags": ["robot", "genius", "tech", "invulnerable"] },
+        { "name": "Apocalypse", "tags": ["mutant", "invulnerable", "shapeshifter", "super_strength"] }
+    ]},
+    { "groupName": "DC Comics", "characters": [
+        { "name": "Darkseid", "tags": ["god", "divinity", "cosmic", "super_strength", "invulnerable", "leader"] },
+        { "name": "The Joker", "tags": ["human", "psychological", "chaos", "unpredictable", "deception"] },
+        { "name": "Lex Luthor", "tags": ["human", "genius", "tech", "gadgets", "leader"] },
+        { "name": "Brainiac", "tags": ["alien", "robot", "genius", "tech"] },
+        { "name": "Doomsday", "tags": ["alien", "brute_force", "super_strength", "invulnerable", "regeneration"] },
+        { "name": "The Batman Who Laughs", "tags": ["human", "psychological", "chaos", "brutal", "multiversal"] }
+    ]},
+    { "groupName": "Anime", "characters": [
+        { "name": "Frieza (Dragon Ball)", "tags": ["alien", "super_strength", "flight", "energy_projection", "transformation", "brutal"] },
+        { "name": "Cell (Dragon Ball)", "tags": ["android", "super_strength", "flight", "energy_projection", "regeneration"] },
+        { "name": "Jiren (Dragon Ball)", "tags": ["alien", "super_strength", "brute_force", "energy_projection"] },
+        { "name": "Griffith (Berserk)", "tags": ["demon", "magic", "leader", "deception", "reality_warper"] },
+        { "name": "Light Yagami (Death Note)", "tags": ["human", "genius", "deception", "psychological", "supernatural"] }
+    ]},
+    { "groupName": "Movie Monsters & Killers", "characters": [
+        { "name": "Godzilla", "tags": ["kaiju", "brute_force", "radiation", "atomic_breath", "natural_disaster"] },
+        { "name": "King Kong", "tags": ["kaiju", "brute_force", "animal"] },
+        { "name": "The Predator", "tags": ["alien", "stealth", "tech", "weapons", "skill"] },
+        { "name": "The Xenomorph (Alien)", "tags": ["alien", "stealth", "horror", "animal", "brutal"] },
+        { "name": "The Thing", "tags": ["alien", "horror", "shapeshifter", "deception"] },
+        { "name": "Jason Voorhees", "tags": ["undead", "supernatural", "brute_force", "horror", "invulnerable"] },
+        { "name": "Freddy Krueger", "tags": ["demon", "supernatural", "psychological", "horror", "reality_warper"] },
+        { "name": "Michael Myers", "tags": ["human", "supernatural", "stealth", "horror", "invulnerable"] }
+    ]},
+    { "groupName": "Other Villains", "characters": [
+        { "name": "Darth Vader (Star Wars)", "tags": ["cyborg", "psychic", "skill", "leader", "tech"] },
+        { "name": "Sauron (Lord of the Rings)", "tags": ["divinity", "magic", "deception", "sorcerer", "leader"] },
+        { "name": "Homelander (The Boys)", "tags": ["superhuman", "flight", "super_strength", "invulnerable", "psychological"] },
+        { "name": "Cthulhu (Lovecraft Mythos)", "tags": ["cosmic", "god", "horror", "psychic", "reality_warper"] }
+    ]}
+  ],
+  "settings": ["A Dyson Sphere's control room", "A Halo ring's control room", "a secluded cabin in the woods", "A terraforming colony on Mars", "a Cyberpunk Neo-Tokyo", "a Derelict Starship", "a Haunted Victorian Mansion", "a Post-Apocalyptic Wasteland", "a Zombie-Infested Metropolis", "An abandoned asylum at midnight", "An abandoned space station (LV-426)", "Apokolips (DC)", "Arkham Asylum (DC)", "Asgard's Rainbow Bridge (Marvel)", "Castle Grayskull (Masters of the Universe)", "Cybertron (Transformers)", "During a Dia de los Muertos parade", "Hogwarts' Great Hall (Harry Potter)", "Inside a black hole's event horizon", "Inside a sentient AI's core matrix", "King Kai's Planet (Dragon Ball)", "King's Landing (Game of Thrones)", "Knowhere (Marvel)", "Latveria (Marvel)", "Mega-City One (Judge Dredd)", "Midgar (Final Fantasy VII)", "Minas Tirith (Lord of the Rings)", "The Alexandria Safe-Zone (The Walking Dead)", "The Astral Plane (Marvel)", "The Batcave (DC)", "The Bridge of a Starship under attack", "The Cell Games Arena (Dragon Ball)", "The Continental Hotel (John Wick)", "The Danger Room (Marvel)", "The Death Star trench (Star Wars)", "The Egyptian Underworld", "The Fortress of Solitude (DC)", "The Great Library of Alexandria (burning)", "The heart of an enchanted forest", "The Hellmouth (Buffy)", "The Hyperbolic Time Chamber (Dragon Ball)", "The Iron Throne room (Game of Thrones)", "The Justice League Watchtower", "the Lost City of Atlantis", "The Matrix Construct (The Matrix)", "The Mines of Moria (Lord of the Rings)", "The Monster Association HQ (One Punch Man)", "The Mystery Shack (Gravity Falls)", "The Nexus of All Realities", "The Overlook Hotel (The Shining)", "The Peak of Mount Doom (Lord of the Rings)", "The planet Nevarro (The Mandalorian)", "The Quantum Realm", "The Roman Colosseum", "the ruins of Krypton", "The Savage Land (Marvel)", "The Southern Air Temple (Avatar)", "The Speed Force (DC)", "The Summit of Mount Olympus", "the TARDIS interior (Doctor Who)", "The Upside Down (Stranger Things)", "The World Martial Arts Tournament (Dragon Ball)", "the Tournament of Power Arena", "Themyscira (DC)", "Valhalla", "Winterfell (Game of Thrones)"],
+  "motives": ["a duel for honor", "a clash of philosophies (order vs. chaos)", "a quest for a powerful artifact", "a tournament for the fate of the universe", "a case of mistaken identity", "defending their world from an invader", "enforcing their own brand of justice", "mind control by a greater villain", "one is hunting the other for a bounty", "protecting a dark secret", "rescuing a loved one", "revenge for a past wrong", "to absorb the other's power", "to change a dark future", "to prove who is the strongest"],
+  "twists": ["a third party manipulated them into fighting", "a trusted ally is the main traitor", "an ancient prophecy foretold this", "it was all a simulation", "it's a case of mistaken identity", "it's a trial by a cosmic entity", "neither of them can actually be killed", "one has been secretly training the other", "one is a clone/android/illusion", "one of them is a time traveler", "one is the other's parent/child (the 'I am your father' twist)", "The hero's victory causes a worse future ('Flashpoint' twist)", "The organization the hero works for is the true enemy", "The hero and villain are trapped in a time loop", "The hero has been dead the whole time", "The 'monster' is the true victim", "the battle is taking place in a dream", "the battle awakens an ancient, far greater evil", "the battle is causing reality to unravel", "the loser is redeemed in defeat", "the 'prophecy' was a lie or misinterpreted", "the 'villain' has a noble but misguided goal", "the setting itself is the real enemy", "the winner must take the loser's place/curse", "the winner loses what they value most", "their powers are swapped", "their powers are nullified by the environment", "their powers are ineffective against each other", "they are being mind-controlled", "they are fighting over a misunderstanding", "they are forced to team up", "they are the same person from different timelines", "they merge into a single being", "To win, the hero must become a monster", "The villain they defeated was holding a greater evil in check"],
+  "ceos": ["Elon Musk (Tesla, SpaceX)", "Bernard Arnault (LVMH)", "Jeff Bezos (Amazon)", "Mark Zuckerberg (Meta)", "Larry Ellison (Oracle)", "Tim Cook (Apple CEO)", "Jensen Huang (Nvidia)", "Bill Gates (Microsoft)", "Warren Buffett (Berkshire Hathaway)", "Larry Page (Google)", "Sergey Brin (Google)", "Mukesh Ambani (Reliance Industries)", "Steve Ballmer (former Microsoft CEO)", "Amancio Ortega (Zara)", "Carlos Slim Helu (América Móvil)"],
+  "leaders": ["Donald Trump (USA)", "Xi Jinping (China)", "Narendra Modi (India)", "Vladimir Putin (Russia)", "Ursula von der Leyen (EU)", "Keir Starmer (UK)", "Emmanuel Macron (France)", "Justin Trudeau (Canada)", "Olaf Scholz (Germany)", "Lula da Silva (Brazil)", "Javier Milei (Argentina)"],
+  "artStyles": ["Photorealistic", "Anime/Manga", "American Comic Book", "Surrealism", "Fantasy Art", "Cyberpunk", "Impressionistic", "Gothic Horror", "80s Horror Film Grain"],
+  "moods": ["Dark and Gritty", "Bright and Heroic", "Mysterious and Eerie", "Chaotic and Violent", "Surreal and Dreamlike", "Solemn and Epic", "Hopeful and Optimistic", "Suspenseful and Tense"],
+  "scriptTemplates": {
+    "Classic Showdown": {
+      "act1": "Driven by {motive}, the stage is set in {setting}, where {protagonist} and {antagonist} are brought into an unavoidable confrontation.",
+      "act2": "The battle rages, shaking the very foundations of their surroundings. A key moment occurs when {protagonist} uses their signature ability, seemingly gaining the upper hand.",
+      "act3": "Just as a victor seems certain, the tide turns due to the twist: {twist}. This shocking revelation changes everything, leading to a surprising outcome."
+    },
+    "Mind Game": {
+      "act1": "The conflict begins not with a punch, but a word. In the tense atmosphere of {setting}, {protagonist} and {antagonist} engage in a battle of wits, each trying to psychologically unbalance the other based on their motive: {motive}.",
+      "act2": "{antagonist} springs a devastating mental trap, forcing {protagonist} to confront their deepest fears. The battle moves from the physical world to the landscape of the mind.",
+      "act3.": "{protagonist} breaks free by understanding the core truth of the twist: {twist}. This allows them to turn the tables, resulting in a psychological checkmate."
+    },
+    "Clash of Titans": {
+      "act1": "With {setting} as their unfortunate arena, the colossal forces of {protagonist} and {antagonist} meet. Their reason for fighting, {motive}, seems insignificant compared to the sheer destruction their presence causes.",
+      "act2": "The fight escalates to a cataclysmic scale. Mountains crumble and oceans boil as they unleash their full power. The tide turns when one combatant uses the environment itself as a weapon.",
+      "act3": "In the ruin of their battlefield, a victor emerges, but not before the twist is revealed: {twist}. The true cost of their battle becomes terrifyingly clear."
+    },
+    "Arcane vs. Science": {
+      "act1": "Magic and technology collide in {setting}. {protagonist} and {antagonist} see each other as an existential threat, their conflict driven by {motive}.",
+      "act2": "The battle is a display of impossible contrasts: spells against circuits, rituals against algorithms. One side gains an advantage by exploiting a fundamental weakness in the other's discipline.",
+      "act3": "The final outcome is decided by the twist: {twist}, proving that magic and science may be more interconnected than either of them believed."
+    }
+  }
 }
