@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythos Engine v16 - The Synergy Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mythos Engine v16</h1>
+        <p>Forge your next legend. The Synergy Engine intelligently analyzes your matchup to create tailored content.</p>
+
+        <div class="dropdown-grid">
+            <div class="dropdown-group">
+                <label for="protagonist">Protagonist <span class="reroll-btn" id="rerollProtagonist">🎲</span></label>
+                <select id="protagonist"></select>
+            </div>
+            <div class="dropdown-group">
+                <label for="antagonist">Antagonist <span class="reroll-btn" id="rerollAntagonist">🎲</span></label>
+                <select id="antagonist"></select>
+            </div>
+            <div class="dropdown-group">
+                <label for="setting">Setting <span class="reroll-btn" id="rerollSetting">🎲</span></label>
+                <select id="setting"></select>
+            </div>
+             <div class="dropdown-group">
+                <label for="motive">Motive <span class="reroll-btn" id="rerollMotive">🎲</span></label>
+                <select id="motive"></select>
+            </div>
+             <div class="dropdown-group">
+                <label for="twist">The Twist <span class="reroll-btn" id="rerollTwist">🎲</span></label>
+                <select id="twist"></select>
+            </div>
+        </div>
+        
+        <h2>Real-World Titans (Optional)</h2>
+        <div class="dropdown-grid">
+            <div class="dropdown-group">
+                <label for="ceo">CEO / Billionaire</label>
+                <select id="ceo"></select>
+            </div>
+            <div class="dropdown-group">
+                <label for="leader">World Leader</label>
+                <select id="leader"></select>
+            </div>
+        </div>
+
+        <button id="generateBtn">Forge Legend</button>
+        <div id="generation-controls" class="module">
+            <button id="saveBtn" class="action-btn">Save Legend</button>
+            <button id="exportBtn" class="action-btn">Export All Content</button>
+        </div>
+
+        <div class="output">
+            <p id="result">Your generated legend will appear here...</p>
+        </div>
+        
+        <div id="generated-content">
+            <div class="module" id="promptArchitect">
+                <h2>AI Art Prompt Architect</h2>
+                <div class="dropdown-grid">
+                    <div class="dropdown-group">
+                        <label for="artStyle">Art Style</label>
+                        <select id="artStyle"></select>
+                    </div>
+                    <div class="dropdown-group">
+                        <label for="mood">Mood</label>
+                        <select id="mood"></select>
+                    </div>
+                </div>
+                <textarea id="promptOutput" readonly></textarea>
+                <button id="copyPromptBtn" class="action-btn">Copy Prompt</button>
+            </div>
+            
+            <div class="module" id="storyWeaver">
+                <h2>Story Weaver (Script Outline)</h2>
+                <div id="story-template-display"></div>
+                <div class="story-act">
+                    <h3>ACT I: The Inciting Incident</h3>
+                    <p id="act1"></p>
+                </div>
+                <div class="story-act">
+                    <h3>ACT II: The Escalation</h3>
+                    <p id="act2"></p>
+                </div>
+                <div class="story-act">
+                    <h3>ACT III: The Resolution</h3>
+                    <p id="act3"></p>
+                </div>
+                <button id="elaborateBtn" class="action-btn">Elaborate with AI</button>
+            </div>
+
+            <div class="module" id="thumbnailGenerator">
+                <h2>Thumbnail Idea Generator</h2>
+                <div id="thumbnailIdeasContainer"></div>
+            </div>
+
+            <div class="module" id="pollGenerator">
+                <h2>Community Poll Generator</h2>
+                <div id="pollQuestionContainer"></div>
+            </div>
+            
+            <div class="module" id="socialAmplifier">
+                <h2>Social Media Amplifier</h2>
+                <h3>Suggested YouTube Titles</h3>
+                <ul id="titleList"></ul>
+                <h3>YouTube Description</h3>
+                <textarea id="youtubeDesc"></textarea>
+                <button id="copyDescBtn" class="action-btn">Copy Description</button>
+                <h3>Hashtags</h3>
+                <textarea id="hashtags"></textarea>
+                <button id="copyTagsBtn" class="action-btn">Copy Hashtags</button>
+            </div>
+        </div>
+        <div class="hall-of-legends">
+            <h2>The Hall of Legends</h2>
+            <div id="savedLegendsContainer">
+                <p>Your saved legends will appear here.</p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
