@@ -104,18 +104,28 @@ select, textarea {
     cursor: pointer;
 }
 
-optgroup {
-    font-style: italic;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-
 textarea {
     width: 100%;
     min-height: 120px;
     resize: vertical;
     box-sizing: border-box;
-    cursor: auto;
+    cursor: text;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+textarea[readonly] {
+    cursor: pointer;
+}
+
+
+optgroup {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
 button {
@@ -186,18 +196,6 @@ button.action-btn {
     margin-bottom: 20px;
 }
 
-#titleList {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#titleList li {
-    background-color: var(--primary-bg);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 8px;
-}
-
 /* Hall of Legends */
 .hall-of-legends {
     margin-top: 40px;
@@ -213,7 +211,15 @@ button.action-btn {
 }
 .saved-legend p {
     font-size: 0.9rem;
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
+    white-space: pre-wrap;
+}
+.legend-actions button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    text-transform: none;
+    letter-spacing: 1px;
 }
 .delete-legend-btn {
     position: absolute;
@@ -224,4 +230,5 @@ button.action-btn {
     color: #ff4d4d;
     font-size: 1.2rem;
     cursor: pointer;
+    margin-top: 0;
 }
